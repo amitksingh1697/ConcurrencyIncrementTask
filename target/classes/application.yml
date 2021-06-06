@@ -1,0 +1,21 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: increment-service
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    #make sure you ae running you mySql on 3306 port else kindly change the port according to your mySql port
+    url: jdbc:mysql://localhost:3306/increment?transformedBitIsBoolean=true
+    username: amit          #kindly enter your mySql userId
+    password: amit          #kindly enter your mySql password
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  properties:
+    hibernate:
+      jdbc:
+        lob:
+          non_contextual_creation: true
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
